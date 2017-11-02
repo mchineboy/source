@@ -9,11 +9,6 @@
 
 (function() {
 
-    /*window.onerror = function() {
-        var room = JSON.parse(localStorage.getItem('basicBotRoom'));
-        window.location = 'https://plug.dj' + room.name;
-    };*/
-
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
             id = API.getUser().id;
@@ -32,57 +27,6 @@
         clearInterval(basicBot.room.afkInterval);
         basicBot.status = false;
     };
-
-    // This socket server is used solely for statistical and troubleshooting purposes.
-    // This server may not always be up, but will be used to get live data at any given time.
-
-    /*
-    var socket = function() {
-        function loadSocket() {
-            SockJS.prototype.msg = function(a) {
-                this.send(JSON.stringify(a))
-            };
-            sock = new SockJS('https://benzi.io:4964/socket');
-            sock.onopen = function() {
-                console.log('Connected to socket!');
-                sendToSocket();
-            };
-            sock.onclose = function() {
-                console.log('Disconnected from socket, reconnecting every minute ..');
-                var reconnect = setTimeout(function() {
-                    loadSocket()
-                }, 60 * 1000);
-            };
-            sock.onmessage = function(broadcast) {
-                var rawBroadcast = broadcast.data;
-                var broadcastMessage = rawBroadcast.replace(/["\\]+/g, '');
-                API.chatLog(broadcastMessage);
-                console.log(broadcastMessage);
-            };
-        }
-        if (typeof SockJS == 'undefined') {
-            $.getScript('https://cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js', loadSocket);
-        } else loadSocket();
-    }
-
-    var sendToSocket = function() {
-        var basicBotSettings = basicBot.settings;
-        var basicBotRoom = basicBot.room;
-        var basicBotInfo = {
-            time: Date.now(),
-            version: basicBot.version
-        };
-        var data = {
-            users: API.getUsers(),
-            userinfo: API.getUser(),
-            room: location.pathname,
-            basicBotSettings: basicBotSettings,
-            basicBotRoom: basicBotRoom,
-            basicBotInfo: basicBotInfo
-        };
-        return sock.msg(data);
-    };
-    */
 
     var storeToStorage = function() {
         localStorage.setItem('basicBotsettings', JSON.stringify(basicBot.settings));
@@ -112,7 +56,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get('https://rawgit.com/basicBot/source/master/lang/langIndex.json', function(json) {
+        $.get('https://rawgit.com/mchineboy/source/master/lang/langIndex.json', function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
@@ -304,7 +248,7 @@
             afkRankCheck: 'ambassador',
             motdEnabled: false,
             motdInterval: 5,
-            motd: 'Temporary Message of the Day',
+            motd: ':herb: :fire: :dash:',
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -318,6 +262,7 @@
             messageInterval: 5,
             songstats: true,
             commandLiteral: '!',
+            tokeInProgress: false,
             blacklists: {
                 NSFW: 'https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json',
                 OP: 'https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json',
@@ -2206,53 +2151,6 @@
                 }
             },
 
-            /*
-            // This does not work anymore.
-            deletechatCommand: {
-                command: 'deletechat',
-                rank: 'mod',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.nouserspecified, {name: chat.un}));
-                        var name = msg.substring(cmd.length + 2);
-                        var user = basicBot.userUtilities.lookupUserName(name);
-                        if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
-                        var chats = $('.from');
-                        var message = $('.message');
-                        var emote = $('.emote');
-                        var from = $('.un.clickable');
-                        for (var i = 0; i < chats.length; i++) {
-                            var n = from[i].textContent;
-                            if (name.trim() === n.trim()) {
-
-                                // var messagecid = $(message)[i].getAttribute('data-cid');
-                                // var emotecid = $(emote)[i].getAttribute('data-cid');
-                                // API.moderateDeleteChat(messagecid);
-
-                                // try {
-                                //     API.moderateDeleteChat(messagecid);
-                                // }
-                                // finally {
-                                //     API.moderateDeleteChat(emotecid);
-                                // }
-
-                                if (typeof $(message)[i].getAttribute('data-cid') == 'undefined'){
-                                    API.moderateDeleteChat($(emote)[i].getAttribute('data-cid')); // works well with normal messages but not with emotes due to emotes and messages are seperate.
-                                } else {
-                                    API.moderateDeleteChat($(message)[i].getAttribute('data-cid'));
-                                }
-                            }
-                        }
-                        API.sendChat(subChat(basicBot.chat.deletechat, {name: chat.un, username: name}));
-                    }
-                }
-            },
-            */
-
             deletechatCommand: {
                 command: 'deletechat',
                 rank: 'mod',
@@ -3457,6 +3355,45 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         API.sendChat('/me basicBot is an open-source bot for plug.dj. More info can be found here: https://github.com/basicBot/source');
+                    }
+                }
+            },
+
+            tokeCommand: {
+                command: 'toke',
+                rank: 'user',
+                type: 'startsWith',
+                
+                functionality: function(chat, cmd) {
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var msg = chat.message;
+                        var pos = parseInt(msg.substring(cmd.length + 1));
+                        if (!isNaN(pos)) {
+                            if ( !pos.match(/^\d+$/) ) return void(0);
+                            else {
+                                if ( pos >= 0 && !basicBot.tokeInProgress ) {
+                                    setTimeout(
+                                        function () {
+                                            API.sendChat( Math.floor(pos/2) + ' minute(s) until we toke!' );
+                                        }, ( Math.floor(pos/2) * 60 ) * 1000 
+                                    );
+                                    setTimeout( 
+                                        function () {
+                                            API.sendChat( Math.floor(pos - 1) + ' minute left!' )
+                                        }, ( ( Math.floor(pos/2) * 60 ) * 1000 ) - 10000 
+                                    );
+                                    setTimeout(
+                                        function () {
+                                            API.sendChat( "Toke! :herb: :fire: :dash:")
+                                        }, pos * 60 * 1000 
+                                    );
+                                    return API.sendChat( chat.un + ' has called for a toke in ' + pos + ' minute(s)');
+                                } else {
+                                    return API.sendChat( chat.un + ' has joined the toke!');
+                                }
+                            }
+                        };
                     }
                 }
             },
