@@ -3370,7 +3370,7 @@
                         var msg = chat.message;
                         var pos = parseInt(msg.substring(cmd.length + 1));
                         if (!isNaN(pos)) {
-                            if ( !pos.match(/^\d+$/) ) return void(0);
+                            if ( pos == 0 ) return void(0);
                             else {
                                 if ( pos >= 0 && !basicBot.tokeInProgress ) {
                                     setTimeout(
