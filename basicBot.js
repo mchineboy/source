@@ -3384,8 +3384,13 @@
                                     setTimeout( 
                                         function () {
                                             API.sendChat( Math.floor((pos - (pos - 1))) + ' minute left!' )
-                                        }, (( ( pos - ( pos - 1)) * 60 ) * 1000 ) - 10000 
+                                        }, (( ( pos - ( pos - 1)) * 60 ) * 1000 )
                                     );
+                                    setTimeout(
+                                        function () {
+                                            API.sendChat( "10 seconds left! Wands at the ready!" );
+                                        }, Math.floor((pos * 60 * 1000 ) - 10000 )
+                                    )
                                     setTimeout(
                                         function () {
                                             API.sendChat( basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
