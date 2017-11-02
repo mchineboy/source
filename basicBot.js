@@ -3383,8 +3383,8 @@
                                     );
                                     setTimeout( 
                                         function () {
-                                            API.sendChat( Math.floor(pos - 1) + ' minute left!' )
-                                        }, ( ( Math.floor(pos/2) * 60 ) * 1000 ) - 10000 
+                                            API.sendChat( Math.floor((pos - (pos - 1))) + ' minute left!' )
+                                        }, (( ( pos - ( pos - 1)) * 60 ) * 1000 ) - 10000 
                                     );
                                     setTimeout(
                                         function () {
