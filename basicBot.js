@@ -263,6 +263,7 @@
             songstats: true,
             commandLiteral: '!',
             tokeInProgress: false,
+            tokers: [],
             blacklists: {
                 NSFW: 'https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json',
                 OP: 'https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json',
@@ -3369,10 +3370,12 @@
                     else {
                         var msg = chat.message;
                         var pos = parseInt(msg.substring(cmd.length + 1));
-                        if (!isNaN(pos)) {
+                        if (!isNaN(pos) && !basicBot.tokeInProgress ) {
                             if ( pos == 0 ) return void(0);
                             else {
                                 if ( pos >= 0 && !basicBot.tokeInProgress ) {
+                                    basicBot.tokeInProgress = true;
+                                    basicBot.tokers = [ '@' + chat.un ];
                                     setTimeout(
                                         function () {
                                             API.sendChat( Math.floor(pos/2) + ' minute(s) until we toke!' );
@@ -3385,15 +3388,19 @@
                                     );
                                     setTimeout(
                                         function () {
-                                            API.sendChat( "Toke! :herb: :fire: :dash:")
+                                            API.sendChat( basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
+                                            basicBot.tokeInProgress = false;
                                         }, pos * 60 * 1000 
                                     );
                                     return API.sendChat( chat.un + ' has called for a toke in ' + pos + ' minute(s)');
-                                } else {
-                                    return API.sendChat( chat.un + ' has joined the toke!');
-                                }
+                                } 
                             }
-                        };
+                        } else if ( basicBot.tokeInProgress ) {
+                            basicBot.tokers.push( '@' + chat.un);
+                            return API.sendChat( chat.un + ' has joined the toke!');
+                        } else {
+                            return void(0);
+                        }
                     }
                 }
             },
