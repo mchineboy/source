@@ -3378,26 +3378,26 @@
                                     basicBot.tokers = [ '@' + chat.un ];
                                     setTimeout(
                                         function () {
-                                            API.sendChat( Math.floor(pos/2) + ' minute(s) until we toke!' );
+                                            API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke!' );
                                         }, ( Math.floor(pos/2) * 60 ) * 1000 
                                     );
                                     setTimeout( 
                                         function () {
-                                            API.sendChat( Math.floor((pos - (pos - 1))) + ' minute left!' )
+                                            API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left!' )
                                         }, (( ( pos - ( pos - 1)) * 60 ) * 1000 )
                                     );
                                     setTimeout(
                                         function () {
-                                            API.sendChat( "10 seconds left! Wands at the ready!" );
+                                            API.sendChat( "/em 10 seconds left! Wands at the ready!" );
                                         }, Math.floor((pos * 60 * 1000 ) - 10000 )
                                     )
                                     setTimeout(
                                         function () {
-                                            API.sendChat( basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
+                                            API.sendChat( '/em ' + basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
                                             basicBot.tokeInProgress = false;
                                         }, pos * 60 * 1000 
                                     );
-                                    return API.sendChat( chat.un + ' has called for a toke in ' + pos + ' minute(s)');
+                                    return API.sendChat( '/em ' + chat.un + ' has called for a toke in ' + pos + ' minute(s)');
                                 } 
                             }
                         } else if ( basicBot.tokeInProgress ) {
