@@ -3376,6 +3376,8 @@
                                 if ( pos >= 0 && !basicBot.tokeInProgress ) {
                                     basicBot.tokeInProgress = true;
                                     basicBot.tokers = [ '@' + chat.un ];
+
+                                    // Only allow extra messages when minutes > 1
                                     if ( pos > 1 ) {
                                         setTimeout(
                                             function () {
@@ -3388,6 +3390,7 @@
                                             }, (( ( pos - ( pos - 1)) * 60 ) * 1000 )
                                         );
                                     }
+
                                     setTimeout(
                                         function () {
                                             API.sendChat( "/em 10 seconds left! Wands at the ready!" );
