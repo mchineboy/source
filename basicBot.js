@@ -3381,12 +3381,12 @@
                                     if ( pos > 1 ) {
                                         setTimeout(
                                             function () {
-                                                API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke!' );
+                                                API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke! (hint: type !toke to join)' );
                                             }, ( Math.floor(pos/2) * 60 ) * 1000 
                                         );
                                         setTimeout( 
                                             function () {
-                                                API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left!' )
+                                                API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left! (hint: type !toke to join)' )
                                             }, (( ( pos - ( pos - 1)) * 60 ) * 1000 )
                                         );
                                     }
@@ -3402,7 +3402,7 @@
                                             basicBot.tokeInProgress = false;
                                         }, pos * 60 * 1000 
                                     );
-                                    return API.sendChat( '/em ' + chat.un + ' has called for a toke in ' + pos + ' minute(s)');
+                                    return API.sendChat( '/em ' + chat.un + ' has called for a toke in ' + pos + ' minute(s) (hint: type !toke to join)');
                                 } 
                             }
                         } else if ( basicBot.tokeInProgress ) {
