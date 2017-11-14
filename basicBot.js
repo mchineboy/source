@@ -3379,11 +3379,12 @@
 
                                     // Only allow extra messages when minutes > 1
                                     if ( pos > 1 ) {
-                                        setTimeout(
-                                            function () {
-                                                API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke! (hint: type !toke to join)' );
-                                            }, ( Math.floor(pos/2) * 60 ) * 1000 
-                                        );
+                                        if ( pos > 2 ) 
+                                            setTimeout(
+                                                function () {
+                                                    API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke! (hint: type !toke to join)' );
+                                                }, ( Math.floor(pos/2) * 60 ) * 1000 
+                                            );
                                         setTimeout( 
                                             function () {
                                                 API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left! (hint: type !toke to join)' )
