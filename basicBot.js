@@ -3383,7 +3383,7 @@
                                             setTimeout(
                                                 function () {
                                                     API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke! (hint: type !toke to join)' );
-                                                }, ( Math.floor(pos/2) * 60 ) * 1000 
+                                                }, ( Math.ceil(pos/2) * 60 ) * 1000 
                                             );
                                         setTimeout( 
                                             function () {
