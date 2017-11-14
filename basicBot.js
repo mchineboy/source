@@ -7,7 +7,7 @@
 
  */
 
-(function() {
+(function () {
 
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
@@ -2408,8 +2408,9 @@
                                     }
                                 )
                             }
-                            var api_key = 'dc6zaTOxFJmzC'; // public beta key
-                            var rating = 'pg-13'; // PG 13 gifs
+                            //var api_key = 'dc6zaTOxFJmzC'; // public beta key
+                            var api_key = 'iNdwrVYYExX5NEXl8P34mJmJJnOmz2Uz';
+                            var rating = 'R'; // PG 13 gifs
                             var tag = msg.substr(cmd.length + 1);
                             var fixedtag = tag.replace(/ /g, '+');
                             var commatag = tag.replace(/ /g, ', ');
@@ -3388,7 +3389,7 @@
                                         setTimeout( 
                                             function () {
                                                 API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left! (hint: type !toke to join)' )
-                                            }, (( ( pos - ( pos - 1)) * 60 ) * 1000 )
+                                            }, ((pos * 60 * 1000) - 60000 )
                                         );
                                     }
 
