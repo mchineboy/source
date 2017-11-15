@@ -2385,6 +2385,25 @@
                 }
             },
 
+            ayyCommand: {
+                command: ['ayy', 'ayyy', 'ayyyy', 'ayyyyy'],
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function ( chat, cmd ) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var msg = chat.message;
+                        var name;
+                        return API.sendChat(
+                            [ "/em ayyy lmao :alien:",
+                              "/em ayyy lmao :herb: :fire: :dash:"
+                            ][Math.floor(Math.random()*2)]
+                        );
+                    }
+                }
+            },
+
             gifCommand: {
                 command: ['gif', 'giphy'],
                 rank: 'user',
