@@ -2408,9 +2408,9 @@
                                     }
                                 )
                             }
-                            //var api_key = 'dc6zaTOxFJmzC'; // public beta key
-                            var api_key = 'iNdwrVYYExX5NEXl8P34mJmJJnOmz2Uz';
-                            var rating = 'R'; // PG 13 gifs
+                            var api_key = 'dc6zaTOxFJmzC'; // public beta key
+                            //var api_key = 'iNdwrVYYExX5NEXl8P34mJmJJnOmz2Uz';
+                            var rating = 'r'; // PG 13 gifs
                             var tag = msg.substr(cmd.length + 1);
                             var fixedtag = tag.replace(/ /g, '+');
                             var commatag = tag.replace(/ /g, ', ');
