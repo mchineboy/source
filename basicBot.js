@@ -190,7 +190,7 @@
     var botCreatorIDs = [3851534, 4105209];
 
     var basicBot = {
-        version: '4.20',
+        version: '4.20.1',
         status: false,
         name: 'basicBot',
         loggedInID: null,
@@ -2409,7 +2409,6 @@
                                 )
                             }
                             var api_key = 'dc6zaTOxFJmzC'; // public beta key
-                            //var api_key = 'iNdwrVYYExX5NEXl8P34mJmJJnOmz2Uz';
                             var rating = 'r'; // PG 13 gifs
                             var tag = msg.substr(cmd.length + 1);
                             var fixedtag = tag.replace(/ /g, '+');
@@ -2442,7 +2441,7 @@
                                 )
                             }
                             var api_key = 'dc6zaTOxFJmzC'; // public beta key
-                            var rating = 'pg-13'; // PG 13 gifs
+                            var rating = 'r'; // PG 13 gifs
                             get_random_id(api_key, function(id) {
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgifrandom, {
