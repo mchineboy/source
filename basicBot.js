@@ -2417,9 +2417,10 @@
                 functionality: function ( chat, cmd ) {
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        var asks = RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
+                        var asks = new RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
                         var msg = chat.message;
                         console.log(msg.match(asks) + " " + msg);
+
                         if ( msg.match(asks) ) {
                             var responses = [
                                 'just great',
