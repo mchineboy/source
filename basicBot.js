@@ -2418,7 +2418,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         var asks = RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
-                        var msg = chat.msg;
+                        var msg = chat.message;
                         if ( msg.match(asks) ) {
                             var responses = [
                                 'just great',
