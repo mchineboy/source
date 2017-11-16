@@ -2419,6 +2419,7 @@
                     else {
                         var asks = RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
                         var msg = chat.message;
+                        console.log(msg.match(asks) + " " + msg);
                         if ( msg.match(asks) ) {
                             var responses = [
                                 'just great',
