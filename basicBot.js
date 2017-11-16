@@ -194,9 +194,9 @@
         status: false,
         name: 'basicBot',
         loggedInID: null,
-        scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
+        scriptLink: 'https://rawgit.com/mchineboy/source/master/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
-        chatLink: 'https://rawgit.com/basicBot/source/master/lang/en.json',
+        chatLink: 'https://rawgit.com/mchineboy/source/master/lang/en.json',
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -204,8 +204,8 @@
         settings: {
             botName: 'basicBot',
             language: 'english',
-            chatLink: 'https://rawgit.com/basicBot/source/master/lang/en.json',
-            scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
+            chatLink: 'https://rawgit.com/mchineboy/source/master/lang/en.json',
+            scriptLink: 'https://rawgit.com/mchineboy/source/master/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -1219,7 +1219,10 @@
                     if (space === -1) {
                         cmd = chat.message;
                     } else cmd = chat.message.substring(0, space);
-                } else return false;
+                } else if ( chat.message.substring(0, 12) === '@DankBot4200' ) {
+                    cmd = '!askagoddamnedquestion';
+                } else
+                    return false;
                 var userPerm = basicBot.userUtilities.getPermission(chat.uid);
                 //console.log('name: ' + chat.un + ', perm: ' + userPerm);
                 if (chat.message !== basicBot.settings.commandLiteral + 'join' && chat.message !== basicBot.settings.commandLiteral + 'leave') {
@@ -2403,6 +2406,33 @@
                         return API.sendChat(
                             messages[Math.floor(Math.random()*messages.length)]
                         );
+                    }
+                }
+            },
+
+            converseCommand: {
+                command: 'askagoddamnedquestion',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function ( chat, cmd ) {
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var asks = RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
+                        var msg = chat.msg;
+                        if ( msg.match(asks) ) {
+                            var responses = [
+                                'just great',
+                                'peachy',
+                                'mas o menos',
+                                'you know how it is',
+                                'eh, ok',
+                                'pretty good, how about you?'
+                            ];
+                            return API.sendChat('@' + chat.un + ' ' + responses[Math.floor(Math.random(responses.length))]);
+                        }
+                        
+                        return void(0);
+
                     }
                 }
             },
