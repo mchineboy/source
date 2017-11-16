@@ -2386,7 +2386,7 @@
             },
 
             ayyCommand: {
-                command: ['ayy', 'ayyy', 'ayyyy', 'ayyyyy'],
+                command: ['ayy', 'ayyy', 'ayyyy', 'ayyyyy', 'ayyyyyy'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function ( chat, cmd ) {
@@ -2394,11 +2394,14 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         var msg = chat.message;
-                        var name;
+                        var messages = [ "/em ayyy lmao :alien:",
+                                "/em ayyy lmao :herb: :fire: :dash:",
+                                "/em ayyy lmao :alien:",
+                                "/em ayyy lmao :alien:",
+                                "/em ayyy lmao :herb: :fire: :dash:"
+                            ];
                         return API.sendChat(
-                            [ "/em ayyy lmao :alien:",
-                              "/em ayyy lmao :herb: :fire: :dash:"
-                            ][Math.floor(Math.random()*2)]
+                            "/em " + messages[Math.floor(Math.random()*messages.length)]
                         );
                     }
                 }
