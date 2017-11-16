@@ -2417,11 +2417,11 @@
                 functionality: function ( chat, cmd ) {
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        var asks = new RegExp(/how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i );
+                        var asks = /how (the hell )?(are|r) (ya|you|u)( doin\'?g?)/i;
                         var msg = chat.message;
-                        console.log(msg.match(asks) + " " + msg);
+                        console.log(asks.exec(msg) + " " + msg);
 
-                        if ( msg.match(asks) ) {
+                        if ( asks.exec(msg) ) {
                             var responses = [
                                 'just great',
                                 'peachy',
