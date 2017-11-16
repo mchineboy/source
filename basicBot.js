@@ -2401,7 +2401,7 @@
                                 "/em ayyy lmao :herb: :fire: :dash:"
                             ];
                         return API.sendChat(
-                            "/em " + messages[Math.floor(Math.random()*messages.length)]
+                            messages[Math.floor(Math.random()*messages.length)]
                         );
                     }
                 }
