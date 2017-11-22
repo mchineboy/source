@@ -7,7 +7,7 @@
 
  */
 
-(function () {
+(function() {
 
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
@@ -435,10 +435,10 @@
                     switch (u.gRole) {
                         case 3:
                         case 3000:
-                            return (1*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                            return (1 * (API.ROLE.HOST - API.ROLE.COHOST)) + API.ROLE.HOST;
                         case 5:
                         case 5000:
-                            return (2*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                            return (2 * (API.ROLE.HOST - API.ROLE.COHOST)) + API.ROLE.HOST;
                     }
                 }
                 return 0;
@@ -851,11 +851,11 @@
             }
 
             if (botCreatorIDs.indexOf(user.id) > -1) {
-              console.log(true);
-                API.sendChat('@'+user.username+' '+':sparkles: :bow: :sparkles:');
+                console.log(true);
+                API.sendChat('@' + user.username + ' ' + ':sparkles: :bow: :sparkles:');
             } else if (basicBot.settings.welcome && greet) {
-              console.log(false);
-              console.log(botCreatorIDs);
+                console.log(false);
+                console.log(botCreatorIDs);
                 welcomeback ?
                     setTimeout(function(user) {
                         API.sendChat(subChat(basicBot.chat.welcomeback, {
@@ -1115,7 +1115,7 @@
                 return true;
             }
             if (!containsLetters && (msg.length === 1 || msg.length > 3)) return true;
-            msg = msg.replace(/[ ,;.:\/=~+%^*\-\\"'&@#]/g, '');
+            msg = msg = msg.replace(/[ ,;.:\/=~+%^*\-\\"'&@#]/g, '');
             var capitals = 0;
             var ch;
             for (var i = 0; i < msg.length; i++) {
@@ -1219,7 +1219,7 @@
                     if (space === -1) {
                         cmd = chat.message;
                     } else cmd = chat.message.substring(0, space);
-                } else if ( chat.message.substring(0, 12) === '@DankBot4200' ) {
+                } else if (chat.message.substring(0, 12) === '@DankBot4200') {
                     cmd = '!askagoddamnedquestion';
                 } else
                     return false;
@@ -1451,10 +1451,10 @@
                 var minPerm;
                 switch (minRank) {
                     case 'admin':
-                        minPerm = (2*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                        minPerm = (2 * (API.ROLE.HOST - API.ROLE.COHOST)) + API.ROLE.HOST;
                         break;
                     case 'ambassador':
-                        minPerm = (1*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                        minPerm = (1 * (API.ROLE.HOST - API.ROLE.COHOST)) + API.ROLE.HOST;
                         break;
                     case 'host':
                         minPerm = API.ROLE.HOST;
@@ -2392,19 +2392,19 @@
                 command: ['ayy', 'ayyy', 'ayyyy', 'ayyyyy', 'ayyyyyy'],
                 rank: 'user',
                 type: 'startsWith',
-                functionality: function ( chat, cmd ) {
+                functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         var msg = chat.message;
-                        var messages = [ "/em ayyy lmao :alien:",
-                                "/em ayyy lmao :herb: :fire: :dash:",
-                                "/em ayyy lmao :alien:",
-                                "/em ayyy lmao :alien:",
-                                "/em ayyy lmao :herb: :fire: :dash:"
-                            ];
+                        var messages = ["/em ayyy lmao :alien:",
+                            "/em ayyy lmao :herb: :fire: :dash:",
+                            "/em ayyy lmao :alien:",
+                            "/em ayyy lmao :alien:",
+                            "/em ayyy lmao :herb: :fire: :dash:"
+                        ];
                         return API.sendChat(
-                            messages[Math.floor(Math.random()*messages.length)]
+                            messages[Math.floor(Math.random() * messages.length)]
                         );
                     }
                 }
@@ -2414,14 +2414,14 @@
                 command: 'askagoddamnedquestion',
                 rank: 'user',
                 type: 'startsWith',
-                functionality: function ( chat, cmd ) {
+                functionality: function(chat, cmd) {
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         var asks = /how (the hell ){0,1}are (ya|you|u)(doin'{0,1}g{0,1}|)/;
                         var msg = chat.message;
                         console.log(asks.exec(msg) + " " + msg);
 
-                        if ( asks.exec(msg) ) {
+                        if (asks.exec(msg)) {
                             var responses = [
                                 'just great',
                                 'peachy',
@@ -2432,7 +2432,19 @@
                             ];
                             return API.sendChat('@' + chat.un + ' ' + responses[Math.floor(Math.random(responses.length))]);
                         }
-                        
+
+                        response = doQuestion(chat.message, chat.un);
+
+                        if (response !== false) {
+                            return API.sendChat('/em @' + chat.un + ' ' + response);
+                        }
+
+                        response = storeAnswer(chat.message);
+
+                        if (response !== false) {
+                            return API.sendChat('/em @' + chat.un + ' ' + response);
+                        }
+
                         return void(0);
 
                     }
@@ -3418,51 +3430,51 @@
                 command: 'toke',
                 rank: 'user',
                 type: 'startsWith',
-                
+
                 functionality: function(chat, cmd) {
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         var msg = chat.message;
                         var pos = parseInt(msg.substring(cmd.length + 1));
-                        if (!isNaN(pos) && !basicBot.tokeInProgress ) {
-                            if ( pos == 0 ) return void(0);
+                        if (!isNaN(pos) && !basicBot.tokeInProgress) {
+                            if (pos == 0) return void(0);
                             else {
-                                if ( pos >= 0 && !basicBot.tokeInProgress ) {
+                                if (pos >= 0 && !basicBot.tokeInProgress) {
                                     basicBot.tokeInProgress = true;
-                                    basicBot.tokers = [ '@' + chat.un ];
+                                    basicBot.tokers = ['@' + chat.un];
 
                                     // Only allow extra messages when minutes > 1
-                                    if ( pos > 1 ) {
-                                        if ( pos > 2 ) 
+                                    if (pos > 1) {
+                                        if (pos > 2)
                                             setTimeout(
-                                                function () {
-                                                    API.sendChat( '/em ' + Math.floor(pos/2) + ' minute(s) until we toke! (hint: type !toke to join)' );
-                                                }, ( Math.ceil(pos/2) * 60 ) * 1000 
+                                                function() {
+                                                    API.sendChat('/em ' + Math.floor(pos / 2) + ' minute(s) until we toke! (hint: type !toke to join)');
+                                                }, (Math.ceil(pos / 2) * 60) * 1000
                                             );
-                                        setTimeout( 
-                                            function () {
-                                                API.sendChat( '/em ' + Math.floor((pos - (pos - 1))) + ' minute left! (hint: type !toke to join)' )
-                                            }, ((pos * 60 * 1000) - 60000 )
+                                        setTimeout(
+                                            function() {
+                                                API.sendChat('/em ' + Math.floor((pos - (pos - 1))) + ' minute left! (hint: type !toke to join)')
+                                            }, ((pos * 60 * 1000) - 60000)
                                         );
                                     }
 
                                     setTimeout(
-                                        function () {
-                                            API.sendChat( "/em 10 seconds left! Wands at the ready!" );
-                                        }, Math.floor((pos * 60 * 1000 ) - 10000 )
+                                        function() {
+                                            API.sendChat("/em 10 seconds left! Wands at the ready!");
+                                        }, Math.floor((pos * 60 * 1000) - 10000)
                                     )
                                     setTimeout(
-                                        function () {
-                                            API.sendChat( '/em ' + basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
+                                        function() {
+                                            API.sendChat('/em ' + basicBot.tokers.join(', ') + ", toke! :herb: :fire: :dash:");
                                             basicBot.tokeInProgress = false;
-                                        }, pos * 60 * 1000 
+                                        }, pos * 60 * 1000
                                     );
-                                    return API.sendChat( '/em ' + chat.un + ' has called for a toke in ' + pos + ' minute(s) (hint: type !toke to join)');
-                                } 
+                                    return API.sendChat('/em ' + chat.un + ' has called for a toke in ' + pos + ' minute(s) (hint: type !toke to join)');
+                                }
                             }
-                        } else if ( basicBot.tokeInProgress ) {
-                            basicBot.tokers.push( '@' + chat.un);
-                            return API.sendChat( chat.un + ' has joined the toke!');
+                        } else if (basicBot.tokeInProgress) {
+                            basicBot.tokers.push('@' + chat.un);
+                            return API.sendChat(chat.un + ' has joined the toke!');
                         } else {
                             return void(0);
                         }
@@ -4227,3 +4239,149 @@
 
     loadChat(basicBot.startup);
 }).call(this);
+
+// Stolen from infobot.
+
+function normquery(msg) {
+    msg = ' ' + msg + ' ';
+    msg = msg.replace(/ (where|what|who)\s+(\S+)\s+(is|are) /i, "$1 $3 $2");
+    msg = msg.replace(/ (where|what|who)\s+(.*)\s+(is|are) /i, "$1 $3 $2");
+    msg = msg.replace(/^\s*(.*?)\s*/, "$1");
+    msg = msg.replace(/be tellin\'{0,1}g{0,1}/i, "tell");
+    msg = msg.replace(/ \'{0,1}bout/, " about");
+    msg = msg.replace(/,{0,1} any(hoo{0,1}w{0,1}|ways{0,1})/ig, " ");
+    msg = msg.replace(/,{0,1}\s*(pretty )*please\??\s*$/, "?");
+
+    if (msg = msg.replace(/wh(at|ich)\s+(add{0,1}res{0,1}s|country|place|net (suffix|domain))/ig, "wh$1 ")) {
+        if (msg.length == 2 && !msg.match(/^\./)) {
+            msg = '.' + msg;
+        }
+        msg += '?';
+    }
+
+    msg = msg.replace(/th(e|at|is) (((m(o|u)th(a|er) {0,1}){0,1}fuck(in\'{0,1}g{0,1}){0,1}|hell|heck|(god-{0,1}){0,1}damn{0,1}(ed){0,1}) {0,1})+/i, "");
+    msg = msg.replace(/wtf/ig, "where");
+    msg = msg.replace(/this (.*) thingy{0,1}/gi, " $1");
+    msg = msg.replace(/this thingy{0,1} (called ){0,1}/ig, "");
+    msg = msg.replace(/ha(s|ve) (an{0,1}y{0,1}|some|ne) (idea|clue|guess|seen) /ig, "know ");
+    msg = msg.replace(/does (any|ne|some) {0,1}(1|one|body) know /ig, "");
+    msg = msg.replace(/do you know /ig, "");
+    msg = msg.replace(/can (you|u|((any|ne|some) {0,1}(1|one|body)))( please){0,1} tell (me|us|him|her)/ig, "");
+    msg = msg.replace(/where (\S+) can \S+ (a|an|the){0,1}/ig, "");
+    msg = msg.replace(/(can|do) (i|you|one|we|he|she) (find|get)( this){0,1}/ig, "is");
+    msg = msg.replace(/(i|one|we|he|she) can (find|get)/ig, "is");
+    msg = msg.replace(/(the ){0,1}(address|url) (for|to) /i, "");
+    msg = msg.replace(/(where is )+/ig, "where is ");
+    msg = msg.replace(/\s+/, " ");
+    msg = msg.replace(/^\s+/, "");
+
+    if (msg = msg.replace(/\s*[\/{0,1}!]*\?\s*$/, "")) {
+        finalqmark = true;
+    }
+
+    msg = msg.replace(/\s+/, " ");
+    msg = msg.replace(/^\s*(.*?)\s*$/, "$1");
+
+    return msg;
+}
+
+function doQuestion(msg, who) {
+    finalqmark = msg.match(/\?+\s*$/);
+    inputlength = msg.length;
+
+    msg = normquery(msg);
+
+    msg = msg.replace(/\s+at\s*(\?*)$/i, "$1");
+
+    msg = msg.replace(/ (where|what|who)\'{0,1}s /i, " $1 is ");
+
+    var questionWord = "";
+
+    if (keyword = msg.match(/(where|what|who)/i)) {
+        questionWord = keyword.toLowerCase();
+        msg = msg.replace(/\s+(what|where|who)\s+/i, "");
+    }
+
+    msg = msg.replace(/^\s+/, "");
+    msg = msg.replace(/\s+$/, "");
+
+    if (questionWord == "" && finalqmark.length > 0) {
+        questionWord = "where";
+    }
+
+    msg = msg.toLowerCase();
+
+    bot_is = JSON.parse(localStorage.getItem('bot_is'));
+    bot_are = JSON.parse(localStorage.getItem('bot_are'));
+
+    var response = bot_is[msg] || bot_are[msg] || 'UNKNOWN';
+
+    if (response.length == 0) return false;
+
+    var outMsg = "";
+
+    if (msg.match(/is/i)) {
+        var x = Math.floor(Math.random() * 16);
+        switch (true) {
+
+            case x == 6:
+                outMsg = "I think " + msg + " is " + response;
+                break;
+            case x == 7:
+                outMsg = "hmmm... " + msg + " is " + response;
+                break;
+            case x == 8:
+                outMsg = "it has been said that " + msg + " is " + response;
+                break;
+            case x == 9:
+                outMsg = msg + " is probably " + response;
+                break;
+            case x == 10:
+                outMsg = "rumour has it " + msg + " is " + response;
+                break;
+            case x == 11:
+                outMsg = "I heard " + msg + " was " + response;
+                break;
+            case x == 12:
+                outMsg = "somebody said " + msg + " was " + response;
+                break;
+            case x == 13:
+                outMsg = "i guess " + msg + " is " + response;
+                break;
+            case x == 14:
+                outMsg = "well, " + msg + " is " + response;
+                break;
+            case x == 15:
+                outMsg = msg + " is, like, " + response;
+                break;
+            default:
+                outMsg = msg + " is " + response;
+        }
+        return outMsg;
+    }
+
+
+}
+
+function storeAnswer(msg) {
+    //is are
+    var response = false;
+    ['is', 'are'].forEach(
+        function(ele) {
+            var sections = msg.toLowerCase().split(' ' + ele + ' ');
+            if (sections.length == 2) { // found a verb
+                var lhs = sections[0].trim();
+                var rhs = sections[1].trim();
+                lhs = lhs.replace(/^(the|da|an{0,1})\s+/i, "");
+                if (lhs.length == 0 && rhs.length == 0) return false;
+                var store = JSON.parse(localStorage.getItem('bot_' + ele));
+                store[lhs] = rhs;
+                localStorage.setItem('bot_' + ele, JSON.stringify(store));
+                response = "ok.. got it: " + lhs + " " + ele + " " + rhs;
+            }
+        }
+    );
+    return response;
+}
+
+let finalqmark = false;
