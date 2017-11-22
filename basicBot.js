@@ -4298,7 +4298,8 @@ function doQuestion(msg, who) {
     var questionWord = "";
 
     if (keyword = msg.match(/(where|what|who)/i)) {
-        questionWord = keyword.toLowerCase();
+        console.log(keyword);
+        questionWord = keyword[0].toLowerCase();
         msg = msg.replace(/\s+(what|where|who)\s+/i, "");
     }
 
