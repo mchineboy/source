@@ -4322,44 +4322,43 @@ function doQuestion(msg, who) {
 
     var outMsg = "";
 
-    if (msg.match(/is/i)) {
-        var x = Math.floor(Math.random() * 16);
-        switch (true) {
+    var x = Math.floor(Math.random() * 16);
+    switch (true) {
 
-            case x == 6:
-                outMsg = "I think " + msg + " is " + response;
-                break;
-            case x == 7:
-                outMsg = "hmmm... " + msg + " is " + response;
-                break;
-            case x == 8:
-                outMsg = "it has been said that " + msg + " is " + response;
-                break;
-            case x == 9:
-                outMsg = msg + " is probably " + response;
-                break;
-            case x == 10:
-                outMsg = "rumour has it " + msg + " is " + response;
-                break;
-            case x == 11:
-                outMsg = "I heard " + msg + " was " + response;
-                break;
-            case x == 12:
-                outMsg = "somebody said " + msg + " was " + response;
-                break;
-            case x == 13:
-                outMsg = "i guess " + msg + " is " + response;
-                break;
-            case x == 14:
-                outMsg = "well, " + msg + " is " + response;
-                break;
-            case x == 15:
-                outMsg = msg + " is, like, " + response;
-                break;
-            default:
-                outMsg = msg + " is " + response;
-        }
-        return outMsg;
+        case x == 6:
+            outMsg = "I think " + msg + " is " + response;
+            break;
+        case x == 7:
+            outMsg = "hmmm... " + msg + " is " + response;
+            break;
+        case x == 8:
+            outMsg = "it has been said that " + msg + " is " + response;
+            break;
+        case x == 9:
+            outMsg = msg + " is probably " + response;
+            break;
+        case x == 10:
+            outMsg = "rumour has it " + msg + " is " + response;
+            break;
+        case x == 11:
+            outMsg = "I heard " + msg + " was " + response;
+            break;
+        case x == 12:
+            outMsg = "somebody said " + msg + " was " + response;
+            break;
+        case x == 13:
+            outMsg = "i guess " + msg + " is " + response;
+            break;
+        case x == 14:
+            outMsg = "well, " + msg + " is " + response;
+            break;
+        case x == 15:
+            outMsg = msg + " is, like, " + response;
+            break;
+        default:
+            outMsg = msg + " is " + response;
+
+            return outMsg;
     }
 
 
