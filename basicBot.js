@@ -4314,7 +4314,9 @@ function doQuestion(msg, who) {
     bot_is = JSON.parse(localStorage.getItem('bot_is'));
     bot_are = JSON.parse(localStorage.getItem('bot_are'));
 
-    var response = bot_is[msg] || bot_are[msg] || 'UNKNOWN';
+    var response =
+        (bot_is != null && bot_is[msg] != null ? bot_is[msg] :
+            bot_are != null && bot_are[msg] != null ? bot_are[msg] : '');
 
     if (response.length == 0) return false;
 
