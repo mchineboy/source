@@ -4377,6 +4377,7 @@ function storeAnswer(msg) {
                 lhs = lhs.replace(/^(the|da|an{0,1})\s+/i, "");
                 if (lhs.length == 0 && rhs.length == 0) return false;
                 var store = JSON.parse(localStorage.getItem('bot_' + ele));
+                if (store == null) store = {};
                 store[lhs] = rhs;
                 localStorage.setItem('bot_' + ele, JSON.stringify(store));
                 response = "ok.. got it: " + lhs + " " + ele + " " + rhs;
