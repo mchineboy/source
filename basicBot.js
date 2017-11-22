@@ -4286,6 +4286,8 @@ function normquery(msg) {
 }
 
 function doQuestion(msg, who) {
+    msg = msg.replace(/^@dankbot4200 /i, ""); // Remove the bot name.
+
     finalqmark = msg.match(/\?+\s*$/);
     inputlength = msg.length;
 
@@ -4368,6 +4370,8 @@ function doQuestion(msg, who) {
 function storeAnswer(msg) {
     //is are
     var response = false;
+    msg = msg.replace(/^@dankbot4200 /i, ""); // Strip bot name
+
     ['is', 'are'].forEach(
         function(ele) {
             var sections = msg.toLowerCase().split(' ' + ele + ' ');
