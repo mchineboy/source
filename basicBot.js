@@ -1221,8 +1221,16 @@
                     } else cmd = chat.message.substring(0, space);
                 } else if (chat.message.substring(0, 12) === '@DankBot4200') {
                     cmd = '!askagoddamnedquestion';
-                } else if (chat.message.match(/(good|great|awesome|rad|sweet)\s+bot/i)) {
-                    return API.sendChat(':thumbsup:');
+                } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool)\s+bot/i)) {
+                    var thanks = [
+                        ':thumbsup:',
+                        ':dogewitit:',
+                        ':dogewitit:',
+                        ':smiley:',
+                        ':fuckyeah:',
+                        ':gachigasm'
+                    ];
+                    return API.sendChat(thanks[Math.floor(Math.random() * thanks.length)]);
                 } else
                     return false;
                 var userPerm = basicBot.userUtilities.getPermission(chat.uid);
