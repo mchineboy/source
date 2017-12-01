@@ -4372,9 +4372,9 @@ function doQuestion(msg, who) {
         default:
             outMsg = msg + " is " + response;
 
-            return outMsg;
-    }
 
+    }
+    return outMsg;
 
 }
 
