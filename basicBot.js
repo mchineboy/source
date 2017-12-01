@@ -1226,9 +1226,10 @@
 
                     var ballornot = chat.message.match(query);
 
-                    if (ballornot.length > 0) {
-                        cmd = '!ask ' + query[0];
+                    if (ballornot !== null) {
+                        cmd = '!ask ' + query[1];
                     }
+                    console.log(cmd);
                 } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool|sexy|sexxy|hot)\s+bot/i)) {
                     var thanks = [
                         ':thumbsup:',
