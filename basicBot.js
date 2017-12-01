@@ -4361,7 +4361,7 @@ function doQuestion(msg, who) {
             outMsg = "somebody said " + msg + " was " + response;
             break;
         case x == 13:
-            outMsg = "i guess " + msg + " is " + response;
+            outMsg = "I guess " + msg + " is " + response;
             break;
         case x == 14:
             outMsg = "well, " + msg + " is " + response;
