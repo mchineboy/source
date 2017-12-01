@@ -1221,6 +1221,14 @@
                     } else cmd = chat.message.substring(0, space);
                 } else if (chat.message.substring(0, 12) === '@DankBot4200') {
                     cmd = '!askagoddamnedquestion';
+
+                    var query = /are you (.*?)\?{0,1}$/i;
+
+                    var ballornot = chat.message.match(query);
+
+                    if (ballornot.length > 0) {
+                        cmd = '!ask ' + query[0];
+                    }
                 } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool|sexy|sexxy|hot)\s+bot/i)) {
                     var thanks = [
                         ':thumbsup:',
@@ -2442,6 +2450,7 @@
                             ];
                             return API.sendChat('@' + chat.un + ' ' + responses[Math.floor(Math.random(responses.length))]);
                         }
+
 
                         response = doQuestion(chat.message, chat.un);
 
