@@ -4316,6 +4316,9 @@ function doQuestion(msg, who) {
 
     msg = msg.replace(/^\s+/, "");
     msg = msg.replace(/\s+$/, "");
+    msg = msg.replace(/\?$/, "");
+    msg = msg.replace(/(is|are)\s+/, "");
+
     console.log(msg);
 
     msg = msg.toLowerCase();
