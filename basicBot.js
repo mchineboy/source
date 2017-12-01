@@ -4309,6 +4309,9 @@ function doQuestion(msg, who) {
         questionWord = keyword[0].toLowerCase();
         msg = msg.replace(/\s+(what|where|who)\s+/i, "");
     }
+
+    if (!questionWord) return false;
+
     console.log(msg);
 
     msg = msg.replace(/^\s+/, "");
