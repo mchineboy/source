@@ -4315,11 +4315,6 @@ function doQuestion(msg, who) {
     msg = msg.replace(/\s+$/, "");
     console.log(msg);
 
-    if (questionWord == "" && finalqmark.length > 0) {
-        questionWord = "where";
-    }
-    console.log(msg);
-
     msg = msg.toLowerCase();
     console.log(msg);
 
@@ -4331,7 +4326,7 @@ function doQuestion(msg, who) {
         (bot_is != null && bot_is[msg] != null ? bot_is[msg] :
             bot_are != null && bot_are[msg] != null ? bot_are[msg] : '');
 
-    if (response.length == 0) return false;
+    if (response.length == 0 && questionWord != "") return "I honestly don't know about " + msg;
 
     var outMsg = "";
 
