@@ -4280,7 +4280,7 @@ function normquery(msg) {
     }
 
     msg = msg.replace(/\s+/, " ");
-    msg = msg.replace(/^\s*(.*?)\s*$/, "$1");
+    msg = msg.replace(/^\s*(.*?)\s*$/, " $1");
 
     return msg;
 }
