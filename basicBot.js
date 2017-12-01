@@ -1221,6 +1221,8 @@
                     } else cmd = chat.message.substring(0, space);
                 } else if (chat.message.substring(0, 12) === '@DankBot4200') {
                     cmd = '!askagoddamnedquestion';
+                } else if (chat.message.match(/(good|great|awesome|rad|sweet)\s+bot/i)) {
+                    return API.sendChat(':thumbsup:');
                 } else
                     return false;
                 var userPerm = basicBot.userUtilities.getPermission(chat.uid);
