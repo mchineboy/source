@@ -4287,7 +4287,7 @@ function normquery(msg) {
 
 function doQuestion(msg, who) {
 
-    msg = msg.replace(/^@(\w+)\s+/i, ""); // Remove the bot name.
+    msg = msg.replace(/^@(\w+)\s+/i, " "); // Remove the bot name.
     console.log(msg);
 
     finalqmark = msg.match(/\?+\s*$/);
@@ -4299,7 +4299,7 @@ function doQuestion(msg, who) {
     msg = msg.replace(/\s+at\s*(\?*)$/i, "$1");
     console.log(msg);
 
-    msg = msg.replace(/ (where|what|who)\'{0,1}s /i, " $1 is ");
+    msg = msg.replace(/\s{0,1}(where|what|who)\'{0,1}s /i, " $1 is ");
     console.log(msg);
 
     var questionWord = "";
