@@ -1221,7 +1221,7 @@
                     } else cmd = chat.message.substring(0, space);
                 } else if (chat.message.substring(0, 12) === '@DankBot4200') {
                     cmd = '!askagoddamnedquestion';
-                } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool)\s+bot/i)) {
+                } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool|sexy|sexxy)\s+bot/i)) {
                     var thanks = [
                         ':thumbsup:',
                         ':dogewitit:',
