@@ -1227,7 +1227,8 @@
                     var ballornot = chat.message.match(query);
 
                     if (ballornot !== null) {
-                        cmd = '!ask ' + ballornot[0];
+                        chat.message = '!ask ' + ballornot[0];
+                        cmd = '!ask';
                     }
                     console.log(cmd);
                 } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool|sexy|sexxy|hot)\s+bot/i)) {
