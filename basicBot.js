@@ -4286,16 +4286,21 @@ function normquery(msg) {
 }
 
 function doQuestion(msg, who) {
-    msg = msg.replace(/^@dankbot4200 /i, ""); // Remove the bot name.
+
+    msg = msg.replace(/^@(\w+)\s+/i, ""); // Remove the bot name.
+    console.log(msg);
 
     finalqmark = msg.match(/\?+\s*$/);
     inputlength = msg.length;
 
     msg = normquery(msg);
+    console.log(msg);
 
     msg = msg.replace(/\s+at\s*(\?*)$/i, "$1");
+    console.log(msg);
 
     msg = msg.replace(/ (where|what|who)\'{0,1}s /i, " $1 is ");
+    console.log(msg);
 
     var questionWord = "";
 
@@ -4304,18 +4309,23 @@ function doQuestion(msg, who) {
         questionWord = keyword[0].toLowerCase();
         msg = msg.replace(/\s+(what|where|who)\s+/i, "");
     }
+    console.log(msg);
 
     msg = msg.replace(/^\s+/, "");
     msg = msg.replace(/\s+$/, "");
+    console.log(msg);
 
     if (questionWord == "" && finalqmark.length > 0) {
         questionWord = "where";
     }
+    console.log(msg);
 
     msg = msg.toLowerCase();
+    console.log(msg);
 
     bot_is = JSON.parse(localStorage.getItem('bot_is'));
     bot_are = JSON.parse(localStorage.getItem('bot_are'));
+    console.log(msg);
 
     var response =
         (bot_is != null && bot_is[msg] != null ? bot_is[msg] :
