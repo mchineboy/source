@@ -1238,7 +1238,7 @@
                         ':dogewitit:',
                         ':smiley:',
                         ':fuckyeah:',
-                        ':gachigasm'
+                        ':gachigasm:'
                     ];
                     return API.sendChat(thanks[Math.floor(Math.random() * thanks.length)]);
                 } else
