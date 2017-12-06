@@ -1231,7 +1231,7 @@
                         cmd = '!ask';
                     }
                     console.log(cmd);
-                } else if (chat.message.match(/(good|great|awesome|rad|sweet|neat|cool|sexy|sexxy|hot|all hail)\s+bot/i)) {
+                } else if (chat.message.match(/(nice|good|great|awesome|rad|sweet|neat|cool|sexy|sexxy|hot|all hail)\s+bot/i)) {
                     var thanks = [
                         ':thumbsup:',
                         ':dogewitit:',
