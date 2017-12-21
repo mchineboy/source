@@ -2505,7 +2505,7 @@
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgiftags, {
                                         name: chat.un,
-                                        url: url,
+                                        url: id,
                                         tags: commatag
                                     }));
                                 } else {
