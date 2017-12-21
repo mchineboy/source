@@ -1238,7 +1238,8 @@
                         ':dogewitit:',
                         ':smiley:',
                         ':fuckyeah:',
-                        ':gachigasm'
+                        ':gachigasm',
+                        ':gachisanta:'
                     ];
                     return API.sendChat(thanks[Math.floor(Math.random() * thanks.length)]);
                 } else
@@ -2491,7 +2492,7 @@
                                         'tag': fixedtag
                                     },
                                     function(response) {
-                                        func(response.data.id);
+                                        func(response.data.fixed_width_downsampled_url);
                                     }
                                 )
                             }
@@ -2504,7 +2505,7 @@
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgiftags, {
                                         name: chat.un,
-                                        id: id,
+                                        url: url,
                                         tags: commatag
                                     }));
                                 } else {
