@@ -56,7 +56,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get('https://cdn.rawgit.com/mchineboy/source/8fd0c7c/lang/langIndex.json', function(json) {
+        $.get('https://cdn.rawgit.com/mchineboy/source/1cb3eee/lang/langIndex.json', function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
@@ -194,9 +194,9 @@
         status: false,
         name: 'basicBot',
         loggedInID: null,
-        scriptLink: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/basicBot.js',
+        scriptLink: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
-        chatLink: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/lang/en.json',
+        chatLink: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/lang/en.json',
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -204,8 +204,8 @@
         settings: {
             botName: 'basicBot',
             language: 'english',
-            chatLink: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/lang/en.json',
-            scriptLink: 'https://cdnrawgit.com/mchineboy/source/8fd0c7c/basicBot.js',
+            chatLink: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/lang/en.json',
+            scriptLink: 'https://cdnrawgit.com/mchineboy/source/1cb3eee/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -265,9 +265,9 @@
             tokeInProgress: false,
             tokers: [],
             blacklists: {
-                NSFW: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/blacklists/NSFWlist.json',
-                OP: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/blacklists/OPlist.json',
-                BANNED: 'https://cdn.rawgit.com/mchineboy/source/8fd0c7c/blacklists/BANNEDlist.json'
+                NSFW: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/blacklists/NSFWlist.json',
+                OP: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/blacklists/OPlist.json',
+                BANNED: 'https://cdn.rawgit.com/mchineboy/source/1cb3eee/blacklists/BANNEDlist.json'
             }
         },
         room: {
@@ -2722,7 +2722,7 @@
                         }));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get('https://cdn.rawgit.com/mchineboy/source/8fd0c7c/lang/langIndex.json', function(json) {
+                        $.get('https://cdn.rawgit.com/mchineboy/source/1cb3eee/lang/langIndex.json', function(json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === 'undefined') {
