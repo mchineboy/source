@@ -91,7 +91,7 @@
     "spam": "\/me @%%NAME%%, pra\u0161au, nespamink.",
     "roomadvertising": "\/me @%%NAME%%, nereklamuok kit\u0173 kambari\u0173, pra\u0161au.",
     "adfly": "\/me @%%NAME%%, pra\u0161au pakeisk savo autowoot program\u0105. Si\u016blau tau PlugCubed: http:\/\/plugcubed.net\/",
-    "validgiftags": "/me [@%%NAME%%] [Tagai: %%TAGS%%] http://i.giphy.com/%%ID%%.gif",
+    "validgiftags": "/me [@%%NAME%%] [Tagai: %%TAGS%%] %%URL%%",
     "invalidgiftags": "/me [@%%NAME%%] [Tagai: %%TAGS%%] Klaidingi tagai, bandyk kažką kitą.",
     "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Neteisingas pra\u0161ymas, bandyk dar kart\u0105.",

@@ -2492,7 +2492,8 @@
                                         'tag': fixedtag
                                     },
                                     function(response) {
-                                        func(response.data.fixed_width_downsampled_url);
+                                        console.log(response.data);
+                                        func(response.data.url);
                                     }
                                 )
                             }

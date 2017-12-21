@@ -91,7 +91,7 @@
     "spam": "\/me @%%NAME%%, n\u00e3o fa\u00e7a spam, por favor.",
     "roomadvertising": "@%%NAME%%, n\u00e3o poste link de outras comunidades, por favor.",
     "adfly": "@%%NAME%%, por favor mude seu script autowoot. N\u00f3s sugerimos plugCubed: http:\/\/plugcubed.net\/",
-    "validgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] http://i.giphy.com/%%ID%%.gif",
+    "validgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] %%URL%%",
     "invalidgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] Tag inválida, tente algo diferente.",
     "validgifrandom": "/me [@%%NAME%%] [GIF randômica] http://media.giphy.com/media/%%ID%%/giphy.gif",
     "invalidgifrandom": "\/me [@%%NAME%%] Inst\u00e2ncia inv\u00e1lida, tente novamente.",

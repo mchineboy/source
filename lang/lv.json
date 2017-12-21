@@ -91,7 +91,7 @@
     "spam": "\/me @%%NAME%%, l\u016bdzu, nespamo.",
     "roomadvertising": "\/me @%%NAME%%, l\u016bdzu, neliec saites uz cit\u0101m kopien\u0101m.",
     "adfly": "\/me @%%NAME%%, L\u016bdzu mainiet savu \"autowoot\" programmu. M\u0113s iesak\u0101m \u0161o.  http:\/\/plugcubed.net\/",
-    "validgiftags": "/me [@%%NAME%%] [%%TAGS%%] http://i.giphy.com/%%ID%%.gif",
+    "validgiftags": "/me [@%%NAME%%] [%%TAGS%%] %%URL%%",
     "invalidgiftags": "\/me [@%%NAME%%] [%%TAGS%%] Neder\u012bgs tags.",
     "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Neder\u012bgs piepras\u012bjums.",

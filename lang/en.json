@@ -91,7 +91,7 @@
     "spam": "\/me @%%NAME%%, please don't spam.",
     "roomadvertising": "\/me @%%NAME%%, don't post links to other rooms please.",
     "adfly": "\/me @%%NAME%%, please change your autowoot program. We suggest PlugCubed: http:\/\/plugcubed.net\/",
-    "validgiftags": "\/me [@%%NAME%%] [Tags: %%TAGS%%] %%url%%",
+    "validgiftags": "\/me [@%%NAME%%] [Tags: %%TAGS%%] %%URL%%",
     "invalidgiftags": "\/me [@%%NAME%%] [Tags: %%TAGS%%] Invalid tags, try something different.",
     "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Invalid request, try again.",

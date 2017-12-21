@@ -91,7 +91,7 @@
     "spam": "\/me @%%NAME%%, pros\u00edm nespamuj.",
     "roomadvertising": "\/me @%%NAME%%, nepos\u00edlej odkazy na jin\u00e9 m\u00edstnosti pros\u00edm.",
     "adfly": "\/me @%%NAME%%, pros\u00edm zm\u011b\u0148 si sv\u016fj AutoWoot. Navrhujeme PlugCubed: http:\/\/plugcubed.net\/",
-    "validgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] http://i.giphy.com/%%ID%%.gif",
+    "validgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] %%URL%%",
     "invalidgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] Neplatný tag, zkus jiný.",
     "validgifrandom": "/me [@%%NAME%%] [Náhodný GIF] http://media.giphy.com/media/%%ID%%/giphy.gif",
     "invalidgifrandom": "\/me [@%%NAME%%] Neplatn\u00e1 \u017e\u00e1dost, zkus to znovu.",
