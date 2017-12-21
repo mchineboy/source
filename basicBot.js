@@ -60,7 +60,7 @@
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
-                link = langIndex[basicBot.settings.language.toLowerCase()];
+                link = langIndex[basicBot.settings.language.toLowerCase()].replace("1cb3eee", "5ae502a");
                 if (basicBot.settings.chatLink !== basicBot.chatLink) {
                     link = basicBot.settings.chatLink;
                 } else {
@@ -70,6 +70,7 @@
                 }
                 $.get(link, function(json) {
                     if (json !== null && typeof json !== 'undefined') {
+
                         if (typeof json === 'string') json = JSON.parse(json);
                         basicBot.chat = json;
                         cb();
