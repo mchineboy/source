@@ -11,10 +11,10 @@ Email enquiries: [hi[at]benzi[dot]io](mailto:hi@benzi.io)
 Bookmark the following code. To run the bot, click the bookmark.
 
 ```
-javascript:(function(){$.getScript('https://rawgit.com/mchineboy/source/1cb3eee/basicBot.js');})();
+javascript:(function(){$.getScript('https://rawgit.com/mchineboy/source/5ae502a/basicBot.js');})();
 ```
 
-If this does not work, go to [basicBot.js](https://raw.githubusercontent.com/mchineboy/source/1cb3eee/basicBot.js) and copy paste its content into your console (accessible in chrome by pressing F12) when on plug.dj in your community.
+If this does not work, go to [basicBot.js](https://raw.githubusercontent.com/mchineboy/source/5ae502a/basicBot.js) and copy paste its content into your console (accessible in chrome by pressing F12) when on plug.dj in your community.
 
 ### Commands
 
