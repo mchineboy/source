@@ -2505,11 +2505,7 @@
                             var commatag = tag.replace(/ /g, ', ');
                             get_id(api_key, tag, function(id) {
                                 if (typeof id !== 'undefined') {
-                                    API.sendChat(subChat(basicBot.chat.validgiftags, {
-                                        name: chat.un,
-                                        url: id,
-                                        tags: commatag
-                                    }));
+                                    API.sendChat("/me [" + chat.un + "] " + id);
                                 } else {
                                     API.sendChat(subChat(basicBot.chat.invalidgiftags, {
                                         name: chat.un,
@@ -2534,10 +2530,7 @@
                             var rating = 'r'; // PG 13 gifs
                             get_random_id(api_key, function(id) {
                                 if (typeof id !== 'undefined') {
-                                    API.sendChat(subChat(basicBot.chat.validgifrandom, {
-                                        name: chat.un,
-                                        url: id
-                                    }));
+                                    API.sendChat("/me [" + chat.un + "] " + id);
                                 } else {
                                     API.sendChat(subChat(basicBot.chat.invalidgifrandom, {
                                         name: chat.un
