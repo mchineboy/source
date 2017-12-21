@@ -205,7 +205,7 @@
             botName: 'basicBot',
             language: 'english',
             chatLink: 'https://cdn.rawgit.com/mchineboy/source/5ae502a/lang/en.json',
-            scriptLink: 'https://cdnrawgit.com/mchineboy/source/5ae502a/basicBot.js',
+            scriptLink: 'https://cdn.rawgit.com/mchineboy/source/5ae502a/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
