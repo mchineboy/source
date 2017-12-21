@@ -93,7 +93,7 @@
     "adfly": "\/me @%%NAME%%, sila tukar autowoot program anda. Kami mencadangkan Plugcubed: http:\/\/plugcubed.net",
     "validgiftags": "/me [@%%NAME%%] [Tag: %%TAGS%%] http://i.giphy.com/%%ID%%.gif",
     "invalidgiftags": "/me [@%%NAME%%] [Tag: %%TAGS%%] tag yang tidak sah, sila cuba yang lain.",
-    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] http:\/\/i.giphy.com\/%%ID%%.gif",
+    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Permintaan yang tidak sah, cuba lagi.",
     "invalidtime": "\/me [@%%NAME%%] masa yang dinyatakan tidak sah.",
     "nouserspecified": "\/me [@%%NAME%%] Tidak ada pengguna yang dinyatakan.",

@@ -93,7 +93,7 @@
     "adfly": "\/me @%%NAME%%, por favor cambia tu programa de \"autogenial\". Te sugerimos PlugCubed: http:\/\/plugcubed.net\/",
     "validgiftags": "/me [@%%NAME%%] [Tags: %%TAGS%%] http://i.giphy.com/%%ID%%.gif",
     "invalidgiftags": "/me [@%%NAME%%] [Etiquetas: %%TAGS%%] Etiquetas invalidas, por favor prueba algo diferente.",
-    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] http:\/\/i.giphy.com\/%%ID%%.gif",
+    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Solicitud no v\u00e1lida, vuelva a intentarlo.",
     "invalidtime": "\/me [@%%NAME%%] Tiempo especificado invalido.",
     "nouserspecified": "\/me [@%%NAME%%] Usuario no especificado.",

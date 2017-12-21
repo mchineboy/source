@@ -93,7 +93,7 @@
     "adfly": "\/me @%%NAME%%, please change your autowoot program. We suggest PlugCubed: http:\/\/plugcubed.net\/",
     "validgiftags": "\/me [@%%NAME%%] [Tags: %%TAGS%%] %%url%%",
     "invalidgiftags": "\/me [@%%NAME%%] [Tags: %%TAGS%%] Invalid tags, try something different.",
-    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] http:\/\/i.giphy.com\/%%ID%%.gif",
+    "validgifrandom": "\/me [@%%NAME%%] [Random GIF] %%URL%%",
     "invalidgifrandom": "\/me [@%%NAME%%] Invalid request, try again.",
     "invalidtime": "\/me [@%%NAME%%] Invalid time specified.",
     "nouserspecified": "\/me [@%%NAME%%] No user specified.",

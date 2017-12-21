@@ -2524,7 +2524,7 @@
                                         'rating': rating
                                     },
                                     function(response) {
-                                        func(response.data.id);
+                                        func(response.data.fixed_width_downsampled_url);
                                     }
                                 )
                             }
@@ -2534,7 +2534,7 @@
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgifrandom, {
                                         name: chat.un,
-                                        id: id
+                                        url: id
                                     }));
                                 } else {
                                     API.sendChat(subChat(basicBot.chat.invalidgifrandom, {
