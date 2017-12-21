@@ -2494,7 +2494,7 @@
                                     },
                                     function(response) {
                                         console.log(response.data);
-                                        func(response.data.url);
+                                        func(response.data.image_url);
                                     }
                                 )
                             }
@@ -2522,7 +2522,7 @@
                                         'rating': rating
                                     },
                                     function(response) {
-                                        func(response.data.fixed_width_downsampled_url);
+                                        func(response.data.image_url);
                                     }
                                 )
                             }
