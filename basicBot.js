@@ -667,7 +667,7 @@
                                                 position: null,
                                                 songCount: 0
                                             };
-                                            API.moderateRemoveDJ(id);
+                                            //API.moderateRemoveDJ(id);
                                             API.sendChat(subChat(basicBot.chat.afkremove, {
                                                 name: name,
                                                 time: time,
@@ -3236,9 +3236,9 @@
                                 if (API.getDJ().id === user.id) {
                                     API.moderateForceSkip();
                                     setTimeout(function() {
-                                        API.moderateRemoveDJ(user.id);
+                                        //API.moderateRemoveDJ(user.id);
                                     }, 1 * 1000, user);
-                                } else API.moderateRemoveDJ(user.id);
+                                } //else API.moderateRemoveDJ(user.id);
                             } else API.sendChat(subChat(basicBot.chat.removenotinwl, {
                                 name: chat.un,
                                 username: name
